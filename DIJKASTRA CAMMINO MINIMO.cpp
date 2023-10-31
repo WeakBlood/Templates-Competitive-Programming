@@ -13,20 +13,26 @@ struct Edge {
 int main() {
     ifstream cin("input.txt");
 	ofstream cout("output.txt");
-    int N, M, T, AIR;
-    cin >> N >> M >> T >> AIR;
-    vector<Edge> edges[N + 1];
+    int N, M;
+    cin >> N >> M;
+    vector<Edge> edges[N];
     priority_queue<pair< int, int>> q;
-    bool processed[N + 1] = {false};
-    bool aired[N+1] = {false};
+    bool processed[N] = {false};
+    int distance[N];
     int n;
-    for(int i = 1; i <= AIR; i++)
-    {
-        cin >> n;
-        aired[n] = true;
-    }
     int a = 0;
     int weight = 0;
+    /*qui stiamo usando una versione di inizializzazione che va in entrambi i versi per avere una versione diretta usa:
+        int src;
+        for ( int i = 1; i <= M; ++i) 
+        {
+            cin >> src;
+            Edge edge;
+            cin >> edge.des;
+            cin >> edge.w;
+            edges[src].push_back(edge);
+        }
+    */
     for ( int i = 1; i <= M; ++i) 
 	{
         int src;
@@ -43,8 +49,12 @@ int main() {
         ede.w = weight;
         edges[a].push_back(ede);
     }
-    int distance[N+1] = {INF};
-    distance[1] = 0;
+    /* non usiamo la dicitura "distance[N] = INF; poichè causa errori quindi limitiamoci a questa" */
+    for(int i = 0; i < N; i++)
+    {
+        distance[i] = INF;
+    }
+    distance[0] = 0;
     q.push({0, 1});
     
     while (!q.empty()) 
