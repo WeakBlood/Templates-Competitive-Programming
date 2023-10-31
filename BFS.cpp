@@ -36,7 +36,7 @@ int main() {
     bool allGood = true; // facciamo una verifica che tutti i nodi siano collegati con il nodo di starting
     q.push(x);
     processed[x] = true;
-    while(!q.empty())
+    while(!q.empty()) //effettiva BFS
     {
         int s = q.front();
         q.pop();
