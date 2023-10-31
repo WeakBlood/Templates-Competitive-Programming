@@ -4,19 +4,18 @@
 #include <queue>
 #include <utility>
 #define INF 1e9
-using namespace std;
 
 struct Edge {
      int des, w;
 };
 
 int main() {
-    ifstream cin("input.txt");
-	ofstream cout("output.txt");
+    std::ifstream cin("input.txt");
+	std::ofstream cout("output.txt");
     int N, M;
     cin >> N >> M;
-    vector<Edge> edges[N];
-    priority_queue<pair< int, int>> q;
+    std::vector<Edge> edges[N];
+    std::priority_queue<std::pair< int, int>> q;
     bool processed[N] = {false};
     int distance[N];
     int n;
@@ -73,7 +72,7 @@ int main() {
         }
     }
     
-    cout << distance[N] << endl;
+    cout << distance[N-1] << std::endl; // stampiamo la distanza minima dal nodo 0 al nodo in N - 1 modifica i nodi se hai richieste specifiche
     
     return 0;
 }
