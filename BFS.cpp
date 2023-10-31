@@ -12,8 +12,8 @@ int main() {
     cin >> N >> M;
     std::vector<int> edges[N];
     std::queue<int> q;
-    x = 0; 
-    max = 0;
+    x = 0; //nodo dal quale iniziamo
+    max = 0; //registriamo il massimo numero di nodi collegati
     bool processed[N] = {false};
     for ( int i = 0; i < M; ++i) 
 	{
@@ -33,7 +33,7 @@ int main() {
         }
 
     }
-    bool allGood = true;
+    bool allGood = true; // facciamo una verifica che tutti i nodi siano collegati con il nodo di starting
     q.push(x);
     processed[x] = true;
     while(!q.empty())
