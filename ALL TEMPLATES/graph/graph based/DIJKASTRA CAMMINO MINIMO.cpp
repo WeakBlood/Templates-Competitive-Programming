@@ -54,7 +54,7 @@ int main() {
         distance[i] = INF;
     }
     distance[0] = 0;
-    q.push({0, 1});
+    q.push({0, 0}); //il primo elemento è la distanza il secondo la partenza 
     
     while (!q.empty()) 
 	{
