@@ -1,0 +1,4 @@
+L'arco che connette : 2 con : 4 è un bridge
+L'arco che connette : 1 con : 2 è un bridge
+L'arco che connette : 3 con : 1 è un bridge
+L'arco che connette : 0 con : 6 è un bridge
