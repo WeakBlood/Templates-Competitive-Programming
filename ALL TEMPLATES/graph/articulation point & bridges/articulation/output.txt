@@ -1,5 +1,0 @@
-Numero di nodi: 3
-Il nodo : 1 è un articolation point
-Il nodo : 3 è un articolation point
-Il nodo : 4 è un articolation point
-
